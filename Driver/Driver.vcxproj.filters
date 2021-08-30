@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{2ea5895b-51ee-4405-8328-e3b156c499b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Callbacks">
+      <UniqueIdentifier>{beeaaca3-30ec-453c-a470-fb58b75da20c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{0bda1fa4-e8d1-4d3c-8c9f-35cf7dbfacb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Detections">
+      <UniqueIdentifier>{d23734dd-0d5d-4dbf-851d-54de30928dd7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="Driver.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Globals.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\stdint.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Defs.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\skCrypt.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\HideImports.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Utils.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Callbacks\Callbacks.h">
+      <Filter>Source Files\Callbacks</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\IO_Handler.h">
+      <Filter>Source Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Detections\Detections.h">
+      <Filter>Source Files\Detections</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,31 @@
+#pragma once
+#include <iostream>
+#include <Poco/Net/TCPServer.h>
+#include <Poco/Net/TCPServerParams.h>
+#include <Poco/Net/TCPServerConnectionFactory.h>
+#include <Poco/Net/TCPServerConnection.h>
+#include <Poco/Net/Socket.h>
+#include "Poco/NumberParser.h"
+#include "Poco/Logger.h"
+#include "Poco/Process.h"
+#include "Poco/NamedEvent.h"
+
+using Poco::Net::TCPServer;
+using Poco::Net::TCPServerConnectionFilter;
+using Poco::Net::TCPServerConnection;
+using Poco::Net::TCPServerConnectionFactory;
+using Poco::Net::TCPServerConnectionFactoryImpl;
+using Poco::Net::StreamSocket;
+using Poco::UInt16;
+using Poco::NumberParser;
+using Poco::Logger;
+using Poco::Event;
+using Poco::NamedEvent;
+using Poco::Process;
+using Poco::ProcessImpl;
+using Poco::Exception;
+
+#include "Utils/Defs.h"
+#include "Server/SQL.h"
+#include "Utils/Processing.h"
+#include "Server/Server.h"
