@@ -12,32 +12,6 @@ namespace Utils
 		return true;
 	}
 
-	bool AuthenticateDLL(PUNICODE_STRING ImageFileName)
-	{
-		OBJECT_ATTRIBUTES ObjAttr = { 0 };
-		HANDLE FileHandle = NULL;
-		IO_STATUS_BLOCK IoBlock = { 0 };
-		PVOID FileObject = NULL;
-
-		InitializeObjectAttributes(&ObjAttr, ImageFileName, OBJ_CASE_INSENSITIVE | OBJ_KERNEL_HANDLE, nullptr, nullptr);
-
-		NTSTATUS Status = ImpCall(ZwOpenFile, &FileHandle, SYNCHRONIZE | FILE_READ_DATA, &ObjAttr, &IoBlock, FILE_SHARE_READ, FILE_NON_DIRECTORY_FILE | FILE_SYNCHRONOUS_IO_NONALERT);
-
-		if (!NT_SUCCESS(Status))
-		{
-			Log("Failed to open file: 0x%llX | 0x%llX\n", Status, IoBlock.Status);
-			return false;
-		}
-
-		Status = ImpCall(ObReferenceObjectByHandle, FileHandle, SYNCHRONIZE | FILE_READ_DATA, nullptr, KernelMode, &FileObject, nullptr);
-
-		if (!NT_SUCCESS(Status))
-		{
-			Log("Failed to reference object: 0x%llX\n", Status);
-			return false;
-		}
-	}
-
 	bool AuthenticateApplication(PCUNICODE_STRING ImageFileName, PVOID DigestBuffer, int SHAtype)
 	{
 		IO_STATUS_BLOCK IoBlock = { 0 };
